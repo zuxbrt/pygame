@@ -19,6 +19,7 @@ ballrect = ball.get_rect()
 
 while 1:
     for event in pygame.event.get():
+        print(event)
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
@@ -30,6 +31,19 @@ while 1:
                 speed[0] = -3
             elif event.dict['key'] == 100:  # d
                 speed[0] = 3
+
+            elif event.dict['key'] == 1073741906:  # up
+                speed[1] = -3
+            elif event.dict['key'] == 1073741905:  # down
+                speed[1] = 3
+            elif event.dict['key'] == 1073741904:  # left
+                speed[0] = -3
+            elif event.dict['key'] == 1073741903:  # rigth
+                speed[0] = 3
+
+            elif event.dict['key'] == 113:
+                exit(200)
+
             print(event, flush=True)
         elif event.type == pygame.KEYUP:
             if event.dict['key'] in (119, 115):  # w s
